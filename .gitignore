@@ -1,0 +1,13 @@
+# Dist
+/dist
+
+# Dependency
+/node_modules
+
+# IDE
+/Source/Web/ResourceJsonData/
+*/.idea/
+.idea/
+*/.vs/
+.vs/
+

@@ -1,0 +1,26 @@
+.heading-panel {
+    background-color: wheat;
+    height: 20px;
+}
+
+.main-area {
+    padding: 40px;
+}
+
+.card {
+    width: 150px;
+    height: 250px;
+    cursor: pointer;
+    padding: 20px 10px;
+    border: 1px solid grey;
+}
+
+.card__input {
+    font-size: 16px;
+    height: 100%;
+    resize: none;
+    border: none;
+}
+.card--empty .card__input {
+    display: none;
+}

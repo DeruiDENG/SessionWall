@@ -5,18 +5,11 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-    }
-    // rules: [{
-    //     test: /\.scss$/,
-    //     use: [{
-    //         loader: "style-loader"
-    //     }, {
-    //         loader: "css-loader"
-    //     }, {
-    //         loader: "sass-loader",
-    //         options: {
-    //             includePaths: ["./contents"]
-    //         }
-    //     }]
-    // }]
+    },
+    rules: [
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }
+    ]
 }

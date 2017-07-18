@@ -2,4 +2,6 @@ const readCards = () => [];
 
 const persistCard = card => card;
 
-export default { readCards, persistCard };
+const removeCard = cardId => cardId;
+
+export default { readCards, persistCard, removeCard };

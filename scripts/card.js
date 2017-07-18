@@ -9,7 +9,7 @@ const generateEmptyCard = ({ color }) => ({ color, title: '', message: '', id: D
 
 const generateCardHtml = (card) => {
   const { color, title, message, id } = card;
-  return `<div class='card card--${color}' data-id=${id}>
+  return `<div class='card js-card card--${color}' data-id=${id}>
             <div class='card__input'>
               <div class='card__title js-card-title' contenteditable>
                   ${title}

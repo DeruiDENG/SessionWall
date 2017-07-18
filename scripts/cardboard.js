@@ -17,8 +17,15 @@ const onClickEmptyCard = () => {
   storage.persistCard(card);
 };
 
+const onClickRemoveCard = (e) => {
+  const $cardToRemove = $(e.currentTarget).closest('.js-card');
+  storage.removeCard($cardToRemove.data('id'));
+  $cardToRemove.remove();
+};
+
 const bind = () => {
   $('.js-new-card').on('click', onClickEmptyCard);
+  $('body').on('click', '.js-remove-card', onClickRemoveCard);
 };
 
 const init = () => {

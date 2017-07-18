@@ -1,22 +1,30 @@
 import $ from 'jquery';
-import card from './card';
+import _ from 'lodash';
+import cardHelper from './card';
+import storage from './storage';
 
 const $cardContainer = $('.js-card-container');
 
-const onClickCard = (e) => {
-  const $card = $(e.currentTarget);
-  $card.removeClass('card--empty');
-  $card.find('card__input').focus();
+const insertCardDom = (card) => {
+  const $card = $($.parseHTML(cardHelper.generateCardHtml(card)));
+  $cardContainer.append($card);
+  $card.focus();
 };
 
-const insertEmptyCard = (htmlGenerator) => {
-  const $card = $($.parseHTML(htmlGenerator()));
-  $card.on('click', onClickCard);
-  $cardContainer.append($card);
+const onClickEmptyCard = () => {
+  const card = cardHelper.generateEmptyCard({ color: 'red' });
+  insertCardDom(card);
+  storage.persistCard(card);
+};
+
+const bind = () => {
+  $('.js-new-card').on('click', onClickEmptyCard);
 };
 
 const init = () => {
-  insertEmptyCard(card.generateEmptyCardHtml());
+  bind();
+  const cardsFromStorage = storage.readCards();
+  _.forEach(cardsFromStorage, insertCardDom);
 };
 
 export default { init };

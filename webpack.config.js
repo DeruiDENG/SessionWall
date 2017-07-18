@@ -35,5 +35,9 @@ module.exports = {
     },
     plugins: [
         extractSass
-    ]
-}
+    ],
+    devServer: {
+        port: 9000,
+        watchContentBase: true,
+    }
+};

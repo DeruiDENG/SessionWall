@@ -1,22 +1,44 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 180px;
   height: 250px;
   cursor: pointer;
   border: 1px solid grey;
   background-color: rgba(255, 255, 216, 0.85);
-}
-
-.card-content {
-  padding: 20px 10px;
+  margin: 20px;
 }
 
 .card__input {
-  font-size: 16px;
-  height: 100%;
-  resize: none;
-  border: none;
-  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px;
+
+  .card__title {
+    padding: 20px 10px;
+    flex: 1;
+  }
+
+  .card__message {
+    flex: 4;
+  }
+}
+
+.card__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+
+  .card__footer-action {
+    font-size: 12px;
+  }
 }
 
 .card--empty .card__input {

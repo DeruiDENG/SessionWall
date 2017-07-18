@@ -1,18 +1,18 @@
 import $ from 'jquery';
 import _ from 'lodash';
-import cardHelper from './card';
+import { generateCardHtml, generateEmptyCard, cardColor } from './card';
 import storage from './storage';
 
 const $cardContainer = $('.js-card-container');
 
 const insertCardDom = (card) => {
-  const $card = $($.parseHTML(cardHelper.generateCardHtml(card)));
+  const $card = $($.parseHTML(generateCardHtml(card)));
   $cardContainer.append($card);
-  $card.focus();
+  $card.find('.js-card-title').focus();
 };
 
 const onClickEmptyCard = () => {
-  const card = cardHelper.generateEmptyCard({ color: 'red' });
+  const card = generateEmptyCard({ color: cardColor.red });
   insertCardDom(card);
   storage.persistCard(card);
 };

@@ -1,8 +1,8 @@
 import $ from 'jquery';
-import card from './card.js';
-import '../contents/styles/board.scss'
+import cardBoard from './cardboard';
+import '../contents/styles/main.scss'
 
 $(() => {
     console.log('Hello World');
-    card.init();
+    cardBoard.init();
 });

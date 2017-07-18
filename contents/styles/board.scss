@@ -1,0 +1,68 @@
+.heading-panel {
+    background-color: rgba(255, 204, 153, 0.70);
+    padding: 20px 40px;
+}
+
+.main-area {
+    padding: 40px;
+}
+
+body::shadow .card {
+    position: relative;
+    width: 180px;
+    height: 250px;
+    cursor: pointer;
+    border: 1px solid grey;
+    background-color: rgba(255, 255, 216, 0.85);
+}
+
+.card {
+    position: relative;
+    width: 180px;
+    height: 250px;
+    cursor: pointer;
+    border: 1px solid grey;
+    background-color: rgba(255, 255, 216, 0.85);
+}
+
+.card-content {
+    padding: 20px 10px;
+}
+
+.card__input {
+    font-size: 16px;
+    height: 100%;
+    resize: none;
+    border: none;
+    background-color: transparent;
+}
+
+.card--empty .card__input {
+    display: none;
+}
+
+.card--empty::after {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    content: '+';
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    top: 42%;
+    left: 42%;
+    border: 2px white solid;
+}
+
+body {
+    background-image: url(../img/GreatWall.jpg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}

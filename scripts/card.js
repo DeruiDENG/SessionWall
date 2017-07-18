@@ -1,9 +1,15 @@
+import _ from 'lodash';
 
 const cardColor = {
   red: 'red',
   purple: 'purple',
   blue: 'blue',
 };
+const isValidColor = ({ color }) => _.includes(_.values(cardColor), color);
+const isValidId = ({ id }) => _.isNumber(id);
+const cardValidators = [_.isObject, isValidColor, isValidId];
+const isCardValid = card => _.every(cardValidators, validate => validate(card));
+
 
 const generateEmptyCard = ({ color }) => ({ color, title: '', message: '', id: Date.now() });
 
@@ -26,4 +32,4 @@ const generateCardHtml = (card) => {
           </div>`;
 };
 
-export { generateCardHtml, generateEmptyCard, cardColor };
+export { generateCardHtml, generateEmptyCard, isCardValid, cardColor };

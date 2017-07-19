@@ -21,4 +21,22 @@ const removeCard = (cardId) => {
   window.localStorage.setItem('SessionWallCards', JSON.stringify(cardsInStorage));
 };
 
-export default { readCards, persistCard, removeCard };
+const updateCard = (cardId, { title, message, color }) => {
+  const cardsInStorage = readCards();
+  const propsToUpdate = _.pickBy({
+    title,
+    message,
+    color,
+  }, prop => prop !== undefined);
+  const updatedCard = _.assign(_.find(cardsInStorage, cardInStorage => cardInStorage.id === cardId),
+    propsToUpdate);
+  if (isCardValid(updatedCard)) {
+    window.localStorage.setItem('SessionWallCards', JSON.stringify(cardsInStorage));
+  }
+};
+
+const clearAll = () => {
+  window.localStorage.removeItem('SessionWallCards');
+};
+
+export default { readCards, persistCard, removeCard, updateCard, clearAll };

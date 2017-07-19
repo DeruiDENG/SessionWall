@@ -22,12 +22,13 @@
   padding: 10px;
 
   .card__title {
-    padding: 20px 10px;
-    flex: 1;
+    height: 40px;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.2);
   }
 
   .card__message {
-    flex: 4;
+    flex-grow: 1;
+    margin-top: 14px;
   }
 }
 

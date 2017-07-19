@@ -20,7 +20,7 @@ const generateCardHtml = (card) => {
               <div class='card__title js-card-title' contenteditable>
                   ${title}
               </div>
-              <div class='card__message' contenteditable>
+              <div class='card__message js-card-message' contenteditable>
                   ${message}
               </div>  
             </div>

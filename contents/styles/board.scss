@@ -1,27 +1,24 @@
 .heading-panel {
-    background-color: rgba(255, 204, 153, 0.70);
-    padding: 20px 40px;
-}
+  display: flex;
+  background-color: rgba(255, 204, 153, 0.70);
+  padding: 20px 40px;
+  align-items: center;
 
-.main-area {
-    padding: 40px;
-}
+  &__title {
+    flex-grow: 1;
+  }
 
-body::shadow .card {
-    position: relative;
-    width: 180px;
-    height: 250px;
-    cursor: pointer;
-    border: 1px solid grey;
-    background-color: rgba(255, 255, 216, 0.85);
+  &__button {
+    padding: 6px;
+  }
 }
 
 body {
-    background-size: cover;
-    background: url(../img/GreatWall.jpg) no-repeat;
-    height: 100vh;
+  background-size: cover;
+  background: url(../img/GreatWall.jpg) no-repeat;
+  height: 100vh;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }

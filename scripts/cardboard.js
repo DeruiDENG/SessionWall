@@ -5,15 +5,17 @@ import cardStorage from './storage';
 
 const $cardContainer = $('.js-card-container');
 
-const insertCardDom = (card) => {
+const insertCardDom = (card, focus) => {
   const $card = $($.parseHTML(generateCardHtml(card)));
   $cardContainer.append($card);
-  $card.find('.js-card-title').focus();
+  if (focus === true) {
+    $card.find('.js-card-title').focus();
+  }
 };
 
 const onClickEmptyCard = () => {
   const card = generateEmptyCard({ color: cardColor.red });
-  insertCardDom(card);
+  insertCardDom(card, true);
   cardStorage.persistCard(card);
 };
 

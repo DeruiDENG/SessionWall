@@ -11,8 +11,25 @@
   height: 250px;
   cursor: pointer;
   border: 1px solid grey;
-  background-color: rgba(255, 255, 216, 0.85);
+  background-color: rgb(255, 255, 216);
+  opacity: 0.75;
   margin: 20px;
+
+  &--red {
+    background-color: indianred;
+  }
+
+  &--yellow {
+    background-color: rgb(255, 255, 216);
+  }
+
+  &--blue {
+    background-color: deepskyblue;
+  }
+
+  &--purple {
+    background-color: mediumpurple;
+  }
 }
 
 .card__input {
@@ -24,18 +41,25 @@
   .card__title {
     height: 40px;
     border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card__message {
     flex-grow: 1;
     margin-top: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 .card__footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
+  user-select: none;
 
   .card__footer-action {
     font-size: 12px;
@@ -53,10 +77,40 @@
   content: '+';
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: rgba(0, 0, 0, 0.5);
   text-align: center;
   border-radius: 50%;
   top: 42%;
   left: 42%;
-  border: 2px white solid;
+  border: 2px rgba(0, 0, 0, 0.5) solid;
+}
+
+.card__colors-selector {
+  display: flex;
+}
+
+.card__color-option {
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+
+  &.red {
+    background-color: red;
+  }
+
+  &.yellow {
+    background-color: yellow;
+  }
+
+  &.blue {
+    background-color: blue;
+  }
+
+  &.purple {
+    background-color: purple;
+  }
+
+  &.selected {
+    outline: 2px solid gray;
+  }
 }

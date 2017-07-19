@@ -4,6 +4,7 @@ const cardColor = {
   red: 'red',
   purple: 'purple',
   blue: 'blue',
+  yellow: 'yellow',
 };
 const isValidColor = ({ color }) => _.includes(_.values(cardColor), color);
 const isValidId = ({ id }) => _.isNumber(id);
@@ -15,7 +16,7 @@ const generateEmptyCard = ({ color }) => ({ color, title: '', message: '', id: D
 
 const generateCardHtml = (card) => {
   const { color, title, message, id } = card;
-  return `<div class='card js-card card--${color}' data-id=${id}>
+  return `<div class='card js-card card--${color}' data-id=${id} data-color=${color}>
             <div class='card__input'>
               <div class='card__title js-card-title' contenteditable>
                   ${title}
@@ -25,6 +26,12 @@ const generateCardHtml = (card) => {
               </div>  
             </div>
             <div class='card__footer'>
+                <div class='card__colors-selector'>
+                    <div class='card__color-option js-color-option red ${color === 'red' ? 'selected' : ''}' data-color='red'></div>
+                    <div class='card__color-option js-color-option blue ${color === 'blue' ? 'selected' : ''}' data-color='blue'></div>
+                    <div class='card__color-option js-color-option yellow ${color === 'yellow' ? 'selected' : ''}' data-color='yellow'></div>
+                    <div class='card__color-option js-color-option purple ${color === 'purple' ? 'selected' : ''}' data-color='purple'></div>
+                </div>
                 <div class='card__footer-action js-remove-card'>
                     Remove
                 </div>

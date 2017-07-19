@@ -62,7 +62,6 @@ const bind = () => {
   $body.on('focus', '.js-card-title, .js-card-message', onInputFocus);
   $body.on('blur', '.js-card-title, .js-card-message', onInputBlur);
   $body.on('click', '.js-color-option', onClickCardColorPanel);
-
 };
 
 const init = () => {

@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { isCardValid } from './card';
 
 const cardStorageKey = 'SessionWallCards';

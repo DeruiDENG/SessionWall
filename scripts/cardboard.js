@@ -22,7 +22,7 @@ const onClickEmptyCard = () => {
 
 const onCleanupCard = () => {
   cardStorage.clearAll();
-  $cardContainer.remove('.js-card');
+  $cardContainer.find('.js-card').remove();
 };
 
 const onClickRemoveCard = (e) => {

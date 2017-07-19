@@ -27,10 +27,10 @@ const generateCardHtml = (card) => {
             </div>
             <div class='card__footer'>
                 <div class='card__colors-selector'>
-                    <div class='card__color-option js-color-option red ${color === 'red' ? 'selected' : ''}' data-color='red'></div>
-                    <div class='card__color-option js-color-option blue ${color === 'blue' ? 'selected' : ''}' data-color='blue'></div>
-                    <div class='card__color-option js-color-option yellow ${color === 'yellow' ? 'selected' : ''}' data-color='yellow'></div>
-                    <div class='card__color-option js-color-option purple ${color === 'purple' ? 'selected' : ''}' data-color='purple'></div>
+                    <div class='card__color-option js-color-option red ${color === cardColor.red ? 'selected' : ''}' data-color='${cardColor.red}'></div>
+                    <div class='card__color-option js-color-option blue ${color === cardColor.blue ? 'selected' : ''}' data-color='${cardColor.blue}'></div>
+                    <div class='card__color-option js-color-option yellow ${color === cardColor.yellow ? 'selected' : ''}' data-color='${cardColor.yellow}'></div>
+                    <div class='card__color-option js-color-option purple ${color === cardColor.purple ? 'selected' : ''}' data-color='${cardColor.purple}'></div>
                 </div>
                 <div class='card__footer-action js-remove-card'>
                     Remove

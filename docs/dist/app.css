@@ -1,0 +1,102 @@
+.heading-panel {
+  display: flex;
+  background-color: rgba(255, 204, 153, 0.7);
+  padding: 20px 40px;
+  align-items: center; }
+  .heading-panel__title {
+    flex-grow: 1; }
+  .heading-panel__button {
+    padding: 6px; }
+
+body {
+  background-size: cover;
+  background: url(d9f2f423cb36ec1d96e79776d61fc110.jpg) no-repeat;
+  height: 100vh; }
+
+* {
+  box-sizing: border-box; }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 180px;
+  height: 250px;
+  cursor: pointer;
+  border: 1px solid grey;
+  background-color: #ffffd8;
+  opacity: 0.75;
+  margin: 20px; }
+  .card--red {
+    background-color: indianred; }
+  .card--yellow {
+    background-color: #ffffd8; }
+  .card--blue {
+    background-color: deepskyblue; }
+  .card--purple {
+    background-color: mediumpurple; }
+
+.card__input {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px; }
+  .card__input .card__title {
+    height: 40px;
+    border-bottom: solid 2px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .card__input .card__message {
+    flex-grow: 1;
+    margin-top: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  user-select: none; }
+  .card__footer .card__footer-action {
+    font-size: 12px; }
+
+.card--empty .card__input {
+  display: none; }
+
+.card--empty::after {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  content: '+';
+  font-size: 24px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-radius: 50%;
+  top: 42%;
+  left: 42%;
+  border: 2px rgba(0, 0, 0, 0.5) solid; }
+
+.card__colors-selector {
+  display: flex; }
+
+.card__color-option {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px; }
+  .card__color-option.red {
+    background-color: red; }
+  .card__color-option.yellow {
+    background-color: yellow; }
+  .card__color-option.blue {
+    background-color: blue; }
+  .card__color-option.purple {
+    background-color: purple; }
+  .card__color-option.selected {
+    outline: 2px solid gray; }
